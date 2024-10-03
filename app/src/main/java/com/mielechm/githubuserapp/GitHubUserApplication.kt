@@ -1,6 +1,7 @@
 package com.mielechm.githubuserapp
 
 import android.app.Application
+import com.mielechm.githubuserapp.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -10,7 +11,7 @@ class GitHubUserApplication: Application() {
         super.onCreate()
         startKoin {
             androidContext(this@GitHubUserApplication)
-            modules()
+            modules(appModule)
         }
     }
 }

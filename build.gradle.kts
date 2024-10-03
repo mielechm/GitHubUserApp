@@ -5,4 +5,5 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room) apply false
     alias(libs.plugins.compose.compiler) apply false
+    alias(libs.plugins.kotlin.serialization) apply false
 }
