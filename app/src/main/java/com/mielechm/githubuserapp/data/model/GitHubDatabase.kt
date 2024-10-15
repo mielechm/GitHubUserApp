@@ -6,7 +6,7 @@ import com.mielechm.githubuserapp.data.model.entities.GitHubUserEntity
 
 @Database(
     entities = [GitHubUserEntity::class],
-    version = 1
+    version = 3
 )
 abstract class GitHubDatabase: RoomDatabase() {
 

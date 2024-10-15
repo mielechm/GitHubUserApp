@@ -8,5 +8,10 @@ class ApiService(private val client: HttpClient) {
         private const val BASE_URL = "https://api.github.com"
     }
 
-    suspend fun getUsers() = client.get("$BASE_URL/users")
+    suspend fun getUsers(since: Int, perPage: Int) = client.get("$BASE_URL/users") {
+        url {
+            parameters.append("since", since.toString())
+            parameters.append("per_page", perPage.toString())
+        }
+    }
 }

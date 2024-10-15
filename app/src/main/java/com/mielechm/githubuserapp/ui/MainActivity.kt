@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.paging.compose.collectAsLazyPagingItems
 import com.mielechm.githubuserapp.ui.navigation.ListScreen
 import com.mielechm.githubuserapp.ui.screens.UsersListScreen
 import com.mielechm.githubuserapp.ui.screens.UsersListViewModel
@@ -23,7 +24,8 @@ class MainActivity : ComponentActivity() {
                 NavHost(navController = navController, startDestination = ListScreen) {
                     composable<ListScreen> {
                         val viewModel: UsersListViewModel by viewModel()
-                        UsersListScreen(navController = navController, viewModel)
+                        val users = viewModel.userPagingFlow.collectAsLazyPagingItems()
+                        UsersListScreen(users)
                     }
                 }
             }

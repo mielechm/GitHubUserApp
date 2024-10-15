@@ -5,10 +5,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class GitHubUser(
-    val id: Long,
+    val id: Int,
     val login: String,
     @SerialName("avatar_url")
     val avatar: String,
-    @SerialName("repos_url")
-    val repositoriesUrl: String
+    @SerialName("url")
+    val userUrl: String
 )

@@ -5,5 +5,5 @@ import com.mielechm.githubuserapp.utils.Resource
 
 interface RemoteRepository {
 
-    suspend fun getUsersPaginated(): Resource<List<GitHubUser>>
+    suspend fun getUsersPaginated(since: Int, perPage: Int): Resource<List<GitHubUser>>
 }

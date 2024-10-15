@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "users")
 data class GitHubUserEntity(
     @PrimaryKey
-    val id: Long,
+    val id: Int,
     val login: String,
     val avatar: String,
-    val repositoryUrl: String
+    val userUrl: String
 )

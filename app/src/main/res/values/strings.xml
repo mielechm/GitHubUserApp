@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GitHubUserApp</string>
+    <string name="error_no_results">No data.</string>
 </resources>

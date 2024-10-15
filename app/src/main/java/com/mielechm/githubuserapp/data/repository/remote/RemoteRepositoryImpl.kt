@@ -7,9 +7,9 @@ import io.ktor.client.call.body
 
 class RemoteRepositoryImpl(private val apiService: ApiService) : RemoteRepository {
 
-    override suspend fun getUsersPaginated(): Resource<List<GitHubUser>> {
+    override suspend fun getUsersPaginated(since: Int, perPage: Int): Resource<List<GitHubUser>> {
         val response = try {
-            apiService.getUsers().body<List<GitHubUser>>()
+            apiService.getUsers(since, perPage).body<List<GitHubUser>>()
         } catch (e: Exception) {
             return Resource.Error(message = e.message.toString())
         }
