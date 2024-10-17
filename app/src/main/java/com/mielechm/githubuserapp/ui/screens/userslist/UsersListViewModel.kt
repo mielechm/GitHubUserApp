@@ -1,4 +1,4 @@
-package com.mielechm.githubuserapp.ui.screens
+package com.mielechm.githubuserapp.ui.screens.userslist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

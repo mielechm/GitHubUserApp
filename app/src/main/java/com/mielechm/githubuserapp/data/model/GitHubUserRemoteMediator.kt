@@ -24,14 +24,14 @@ class GitHubUserRemoteMediator(
     ): MediatorResult {
         return try {
             val loadKey = when (loadType) {
-                LoadType.REFRESH -> 1
+                LoadType.REFRESH -> 0
                 LoadType.PREPEND -> return MediatorResult.Success(endOfPaginationReached = true)
                 LoadType.APPEND -> {
                     val lastItem = state.lastItemOrNull()
                     if (lastItem == null) {
                         0
                     } else {
-                        (lastItem.id / state.config.pageSize) + 1
+                        lastItem.id + 1
                     }
                 }
             }
